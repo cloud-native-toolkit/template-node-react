@@ -217,16 +217,16 @@ spec:
 
                 # sleep for 10 seconds to allow enough time for the server to start
                 while [ $(curl -sL -w "%{http_code}\\n" "http://${INGRESS_HOST}:${PORT}/health" -o /dev/null --connect-timeout 3 --max-time 5 --retry 3 --retry-max-time 30) != "200" 
-		    
+
 		do
 
-		sleep 30
-                i=$((sleep_countdown-1))
-	        if [ sleep_countdown=0 ]
-                then
-		  echo "Could not reach health endpoint: http://${INGRESS_HOST}:${PORT}/health"
-		  exit 1;
-		done
+		  sleep 30
+                  i=$((sleep_countdown-1))
+	          if [ sleep_countdown=0 ]
+                  then
+                    echo "Could not reach health endpoint: http://${INGRESS_HOST}:${PORT}/health"
+                    exit 1;
+                done
 
                 echo "Successfully reached health endpoint: http://${INGRESS_HOST}:${PORT}/health"
                 echo "====================================================================="
