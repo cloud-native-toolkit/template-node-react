@@ -1,2 +1,3 @@
-# catalyst-webui-react
-A starter kit that demonstrates full developer lifecycle for a Web UI in IBM Cloud
+# template-node-react
+
+The starter kit has been moved to https://github.com/IBM/template-node-react
